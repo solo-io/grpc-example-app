@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package store;
+
+import "google/protobuf/empty.proto";
+
+// a service for looking up books.
+service Books {
+    rpc ListBooks(google.protobuf.Empty) returns (ListBooksResponse) {}
+}
+
+message Book {
+    // global item UUID. used for purchases
+    string uuid = 1;
+
+    // name of the book
+    string name = 2;
+
+    // author of the book
+    string author = 3;
+
+    // price of the book
+    float price = 4;
+}
+
+message ListBooksResponse {
+    repeated Book books = 1;
+}

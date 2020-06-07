@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package store;
+
+import "google/protobuf/empty.proto";
+
+// a service for looking up records.
+service Records {
+    rpc ListRecords(google.protobuf.Empty) returns (ListRecordsResponse) {}
+}
+
+message Record {
+    // global item UUID. used for purchases
+    string uuid = 1;
+
+    // name of the record
+    string name = 2;
+
+    // artist who recorded the record
+    string artist = 3;
+
+    // price of the record
+    float price = 4;
+}
+
+message ListRecordsResponse {
+    repeated Record records = 1;
+}
