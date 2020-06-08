@@ -36,7 +36,7 @@ func cmd() *cobra.Command {
 	var port int
 	cmd := &cobra.Command{
 		Use:   "start",
-		Short: "Start the dev-portal web server / kube controller",
+		Short: "Start the grpc server for one of two possible microservices.",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			ctx := contextutils.WithLogger(context.Background(), service+"-store-grpc")
 			return start(ctx, service, port)

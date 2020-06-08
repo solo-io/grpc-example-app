@@ -17,11 +17,24 @@ func main() {
 	cmd := codegen.Command{
 		AppName: "online-shopping",
 		Chart: &model.Chart{
+			Data: model.Data{
+				ApiVersion:  "v1",
+				Name:        "grpc-example-app",
+				Description: "Helm chart for the Solo.io Example gRPC Store App",
+				Version:     "v1",
+			},
 			Operators: []model.Operator{
 				{
 					Name: "books",
 					Deployment: model.Deployment{
 						Image: image,
+					},
+					Service: model.Service{
+						Type: v1.ServiceTypeClusterIP,
+						Ports: []model.ServicePort{{
+							Name:        "grpc",
+							DefaultPort: 8080,
+						}},
 					},
 					Args: []string{"--service=books"},
 				},
@@ -29,6 +42,13 @@ func main() {
 					Name: "records",
 					Deployment: model.Deployment{
 						Image: image,
+					},
+					Service: model.Service{
+						Type: v1.ServiceTypeClusterIP,
+						Ports: []model.ServicePort{{
+							Name:        "grpc",
+							DefaultPort: 8080,
+						}},
 					},
 					Args: []string{"--service=records"},
 				},

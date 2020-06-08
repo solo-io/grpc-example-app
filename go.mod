@@ -42,7 +42,7 @@ require (
 	github.com/golang/protobuf v1.3.3
 	github.com/grpc-ecosystem/go-grpc-middleware v1.0.1-0.20190118093823-f849b5445de4
 	github.com/solo-io/go-utils v0.15.2
-	github.com/solo-io/skv2 v0.3.2
+	github.com/solo-io/skv2 v0.3.3
 	github.com/spf13/cobra v0.0.5
 	go.uber.org/zap v1.13.0
 	google.golang.org/grpc v1.28.1
