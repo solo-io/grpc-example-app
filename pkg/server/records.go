@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/solo-io/grpc-example-app/api/store"
 )

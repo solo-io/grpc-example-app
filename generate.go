@@ -34,7 +34,7 @@ func main() {
 				},
 			},
 		},
-		ManifestRoot: "install/helm/bookstore",
+		ManifestRoot: "install/helm/store",
 		Builds: []model.Build{{
 			MainFile: "cmd/main.go",
 			Push:     true,

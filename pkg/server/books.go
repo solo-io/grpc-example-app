@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/solo-io/grpc-example-app/api/store"
 )
@@ -16,8 +17,6 @@ func NewBookServer(books []*store.Book) *bookServer {
 
 func (b *bookServer) ListBooks(context.Context, *empty.Empty) (*store.ListBooksResponse, error) {
 	return &store.ListBooksResponse{
-		Books:                b.books,
+		Books: b.books,
 	}, nil
 }
-
-
